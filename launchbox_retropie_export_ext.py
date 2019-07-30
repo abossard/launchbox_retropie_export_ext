@@ -169,7 +169,7 @@ for platform in platforms.keys():
 			
                 print("%s: %s" % (platform_lb, game.find("Title").text))
 				
-                rom_path = game.find("ApplicationPath").text        
+                rom_path = os.path.join(lb_dir, game.find("ApplicationPath").text)
                 this_game["path"]="./" + os.path.basename(r'%s' % game.find("ApplicationPath").text)
 				
                 this_game["name"]=game.find("Title").text
